@@ -1,0 +1,16 @@
+/node_modules/
+dist/
+
+coverage
+data
+.DS_Store
+.vscode
+.scannerwork*
+.vscode/settings.json
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
