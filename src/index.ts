@@ -7,7 +7,7 @@ quickSort(nums, 0, nums.length - 1);
 
 console.log(nums);
 
-const sampleArray = sortMockData.nums;
+const sampleArray = sortMockData.negativeArray;
 mergeSort(sampleArray);
 
 console.log(sampleArray);

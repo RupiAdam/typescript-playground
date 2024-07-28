@@ -1,10 +1,11 @@
-const merge = (leftArray: number[], rightArray: number[], array: number[]) => {
-  const leftSize = array.length / 2;
-  const rightSize = array.length - leftSize;
+const merge = (leftArray: number[], rightArray: number[], array: number[]): void => {
+  const leftSize = leftArray.length;
+  const rightSize = rightArray.length;
   let i = 0;
   let l = 0;
   let r = 0;
 
+  // check the conditions for merging
   while (l < leftSize && r < rightSize) {
     if (leftArray[l] < rightArray[r]) {
       array[i] = leftArray[l];
@@ -17,13 +18,13 @@ const merge = (leftArray: number[], rightArray: number[], array: number[]) => {
     }
   }
 
-  while (l < leftSize){
+  while (l < leftSize) {
     array[i] = leftArray[l];
     i++;
     l++;
   }
 
-  while (r < rightSize){
+  while (r < rightSize) {
     array[i] = rightArray[r];
     i++;
     r++;
@@ -36,20 +37,8 @@ const mergeSort = (array: number[]): void => {
   if (length <= 1) return;
 
   const middle = Math.floor(length / 2);
-  const leftArray: number[] = new Array<number>(middle);
-  const rightArray: number[] = new Array<number>(length - middle);
-
-  let i = 0;
-  let j = 0;
-
-  for (; i < length; i++) {
-    if (i < middle) {
-      leftArray[i] = array[i];
-    } else {
-      rightArray[j] = array[i];
-      j++;
-    }
-  }
+  const leftArray: number[] = array.slice(0, middle);
+  const rightArray: number[] = array.slice(middle);
 
   mergeSort(leftArray);
   mergeSort(rightArray);
