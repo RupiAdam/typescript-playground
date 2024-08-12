@@ -20,6 +20,7 @@ module.exports = {
   ],
   rules: {
     'no-param-reassign': 'off',
-    'no-plusplus': 'off'
+    'no-plusplus': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off'
   },
 };
